@@ -47,19 +47,22 @@ def inpt():
     else:
         printmat()
         player+=1
+def start():
+    player=1
+    mat=[['_','_','_'],['_','_','_'],['_','_','_']]
 mat=[['_','_','_'],['_','_','_'],['_','_','_']]
 printmat()
 player=1
+Print("WELCOME IN THIS TIC TAC TOE")
 while(True):
     inpt()
     if is_X_winner(mat):
         print("X wins")
-        sys.exit()
+        start()
     if is_O_winner(mat):
         print("O wins")
-        sys.exit()
+        start()
     li=[1 if '_' not in i else 0 for i in mat ]
     if all(li):
         print("Draw")
-        player=1
-        mat=[['_','_','_'],['_','_','_'],['_','_','_']]
+        start()
